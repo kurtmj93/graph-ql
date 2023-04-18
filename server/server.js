@@ -8,10 +8,12 @@ const { ApolloServer } = require('apollo-server-express');
 
 // import graphQL schema
 const { typeDefs, resolvers } = require ('./schemas');
-
+// import authMiddleware
+const { authMiddleware } = require('./utils/auth');
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
+  context: authMiddleware
 });
 
 const app = express();
