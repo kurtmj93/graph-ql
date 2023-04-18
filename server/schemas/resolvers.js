@@ -15,7 +15,7 @@ const resolvers = {
       const user = await User.create({username, email, password});
       return user;
     },
-    saveBook: async (parent, {}) => {
+    saveBook: async (parent, {bookInfo}) => {
     },
     removeBook: async (parent, {bookId}) => {
 
